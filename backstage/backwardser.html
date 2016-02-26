@@ -1,0 +1,32 @@
+<doctype !HTML>
+<html>
+<head>
+	<title>Make it Backwards</title>
+</head>
+<body>
+	<h1>Make it Backwards</h1>
+	<input type="text" id="input"></input>
+	<button onclick="backwardsify()">Backwardsify!</button>
+	<span id="span"></span>
+	
+	<script type="text/javascript">
+	
+	var backwardsify = function() {
+		var myTextField = document.getElementById('input');
+		var newstr = "";
+		if(myTextField.value != "") {
+			for(var i = 0; i < myTextField.value.length; i++){
+				var c = myTextField.value.charAt(i); //c is the first char
+				newstr = c.toString().concat(newstr);
+			}
+			alert("You entered: " + myTextField.value + " which converts to: " + newstr)
+			}
+			document.getElementById('span').value = newstr;
+		else
+			alert("Would you please enter some text?")	
+	}
+	
+	</script>
+
+</body>
+</html>

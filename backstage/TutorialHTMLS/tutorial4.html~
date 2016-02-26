@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<HTML lang="en-US">
+
+<HEAD>
+	<link rel="stylesheet" type="text/css" href="CSS.css"></link>
+</HEAD>
+<BODY>
+
+	<div id="banner" class="banner">
+		<table class="banner">
+			<tr>	
+				<td class="banner">
+				<a id="bio" href="/~kingcha/page2.html" class="banner">
+					Bio</a><td>|</td></td>
+				<td class="banner">
+				<a id="resume" href="ResumeAutumn2013.pdf" class="banner">
+					Resume</a><td>|</td></td>
+				<td class="banner">
+				<a id="blog" href="http://www.digitalliteracyblog.wordpress.com">
+					Blog</a><td>|</td></td>
+				<td class="banner">
+				<a id="email" href="mailto:king.1380@osu.edu" class="banner">
+					Email</a></td>
+			</tr>
+		</table>
+	  </div>
+
+	<h1> OLGA BENSON </h1>
+
+	<div id="main page">
+
+		<!-- write some code here in the body. -->
+		<p id="personal"> Personal aspirations 
+			<ul>
+				<li> I am a Computer Science student at THE Ohio State University</li>
+				<li> I like watching football and playing tennis </li>
+				<li> One day I would like to be a computer programmer </li>
+			</ul>
+		</p>
+		<br>
+		<p id="school"> Educational Background 
+			<ul>
+				<li> I am a Computer Science student at THE Ohio State University</li>
+				<li> I like watching football and playing tennis </li>
+				<li> One day I would like to be a computer programmer </li>
+			</ul>
+		</p>
+		<br>
+		<p id="experience"> Work Experience 
+			<ul>
+				<li> I am a Computer Science student at THE Ohio State University</li>
+				<li> I like watching football and playing tennis </li>
+				<li> One day I would like to be a computer programmer </li>
+			</ul>
+		</p>
+
+	</div>
+
+</BODY>
+</HTML>

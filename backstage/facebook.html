@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<HTML lang="en-US">
+<HEAD>
+<META http-equiv="Content-Type" content=text/html; charset="UTF-8">
+<script type="text/javascript">
+
+	function showIcon(id){
+		document.getElementById(id).style.visibility = "visible";
+	}
+	
+	function hideIcon(id){
+		document.getElementById(id).style.visibility = "hidden" ;
+	}
+
+</script>
+
+</HEAD>
+<BODY>
+
+<div style="position:relative; left:0; top:0;">
+
+<img style="height:200px;width:200px;position:absolute;top:0;left:0;" src="Charlie.jpg"
+	onmouseover="showIcon('icon')"
+	onmouseout="hideIcon('icon')">
+
+<img id="icon" href="google.com" src="Charlie.png" 
+	style="height:40px;width:40px;position:absolute;
+	top:20;left:100;visibility:hidden;"/>
+
+</img>
+	
+</div>
+
+</BODY>
+</HTML>

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML lang="en-US">
+<HEAD>
+<META http-equiv="Content-Type" content=text/html; charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../css/CSS.css"></link>
+<script type="text/javascript">
+
+function XandO(id){
+
+//--  To the team: this is where the "AI" for the game will be.  I am not totally sure how to code this part of the game without a bunch of "if --> else if" stuff.  Play around with how it works now and you will see how the game 'works' (is supposed to work)  
+
+/*
+	here is how the game board is by id:
+
+	1(0,0)	2	3
+
+	4	5(1,1)	6
+
+	7	8	9(2,2)
+*/
+
+   if(document.getElementById(id)){    //check the element exists and can be accessed
+       var square = document.getElementById(id);    //get hold of the element
+       if(square.value==""){   //see if display property is set to none
+		var bool = "";
+		square.value="X";
+		square.className = "pressed";
+		if (id == "1")	//EXAMPLE GAME ONLY, THIS CODE IS SHIT
+		{
+			id = "5";
+			square = document.getElementById(id);
+			square.value = "O";
+			square.className = "pressed";
+			id = "4";
+			square = document.getElementById(id);
+			square.value = "X";
+			square.className = "pressed";
+			id = "6";
+			square = document.getElementById(id);
+			square.value = "O";
+			square.className = "pressed";
+			id = "7";
+			square = document.getElementById(id);
+			square.value = "X";
+			square.className = "pressed";
+
+			//X wins!
+			square = document.getElementById("1");
+			square.className = "win";
+			square = document.getElementById("4");
+			square.className = "win";
+			square = document.getElementById("7");
+			square.className = "win";
+
+			display = document.getElementById("winCol");
+			display.value ++;
+
+			bool = true;	
+
+			setTimeout(function() {refreshGame("game");},1250);
+		}
+		else if (id == "2")
+		{
+			id = "5";
+			square = document.getElementById(id);
+			square.value = "O";
+			square.className = "pressed";
+			id = "1";
+			square = document.getElementById(id);
+			square.value = "X";
+			square.className = "pressed";
+			id = "6";
+			square = document.getElementById(id);
+			square.value = "O";
+			square.className = "pressed";
+			id = "7";
+			square = document.getElementById(id);
+			square.value = "X";
+			square.className = "pressed";
+			id = "4";
+			square = document.getElementById(id);
+			square.value = "O";
+			square.className = "pressed";
+
+			//X wins!
+			square = document.getElementById("4");
+			square.className = "loss";
+			square = document.getElementById("5");
+			square.className = "loss";
+			square = document.getElementById("6");
+			square.className = "loss";
+
+			display = document.getElementById("lossCol");
+			display.value ++;
+
+			bool = false;
+
+			setTimeout(function() {refreshGame("game");},1250);
+		}
+       		else{
+           		square.style.display="X";     
+       		}
+
+		//------ good code -------
+		
+
+		if (bool == true){
+			document.getElementById("winbox").value = "You Win!";
+		}
+		else if (bool == false){
+			document.getElementById("winbox").value = "You Lose..";
+		}
+		else{
+			document.getElementById("winbox").value = "";
+		}
+		//------- still good stuff ------
+   	}
+   }
+}
+
+function refreshGame(id, bool){
+    	//Clear the playing area for the current game (ragequit)
+
+	for (var i=1; i<=9; i++){
+		document.getElementById(i).value = "";
+		document.getElementById(i).className = "square";
+	}
+	document.getElementById("winbox").value = ""
+}
+
+function resetScore(){
+	
+	document.getElementById("winCol").value = 0;
+	document.getElementById("lossCol").value = "0";
+		
+}
+
+
+
+</script>
+<TITLE>Tic Tac Toe!</TITLE>
+
+</HEAD>
+<BODY>
+
+<div id="body" class="centered">
+<h1>Tic Tac Toe!</h1>
+<hr width="100%">
+<table id="game">
+	<tr><!-- 0 -->
+		<td><!-- (0,0) -->
+		<input type="button" id="1" class="square" value="" onclick="XandO(id)"></input>
+		</td>
+		<td><!-- (0,1) -->
+		<input type="button" id="2" class="square" value="" onclick="XandO(id)"></input>
+		</td>
+		<td><!-- (0,2) -->
+		<input type="button" id="3" class="square" value="" onclick="XandO(id)"></input>
+		</td>
+	</tr>
+	<tr><!-- 1 -->
+		<td><!-- (1,0) -->
+		<input type="button" id="4" class="square" value="" onclick="XandO(id)"></input>
+		</td>
+		<td><!-- (1,1) -->
+		<input type="button" id="5" class="square" value="" onclick="XandO(id)"></input>
+		</td>
+		<td><!-- (1,2) -->
+		<input type="button" id="6" class="square" value="" onclick="XandO(id)"></input>
+		</td>
+	</tr>
+	<tr><!-- 2 -->
+		<td><!-- (2,0) -->
+		<input type="button" id="7" class="square" value="" onclick="XandO(id)"></input>
+		</td>
+		<td><!-- (2,1) -->
+		<input type="button" id="8" class="square" value="" onclick="XandO(id)"></input>
+		</td>
+		<td><!-- (2,2) -->
+		<input type="button" id="9" class="square" value="" onclick="XandO(id)"></input>
+		</td>
+	</tr>
+
+
+</table>
+<br>
+	<input id="winbox" class="score" value=""></input></p>
+
+	<button id="resetSquares" class="reset" onclick="refreshGame(id)">Reset Game</button>
+	
+	<p>Player Wins: &nbsp;
+	<input id="winCol" class="score" value="0"></input></p>
+
+	
+	<p>Computer Wins: &nbsp;
+	<input id="lossCol" class="score" value="0"></input></p>
+
+	<button id="resetScore" class="reset" onclick="resetScore(id)">Reset Score</button>
+</div>
+
+</BODY>
+</HTML>

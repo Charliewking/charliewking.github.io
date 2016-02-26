@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML lang="en-US">
+<HEAD>
+<META http-equiv="Content-Type" content=text/html; charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS.css"></link>
+<script type="text/javascript" >
+
+function showorhide(id){
+   if(document.getElementById(id)){    //check the element exists and can be accessed
+       var ele = document.getElementById(id);    //get hold of the element
+       if(ele.style.display=="none"){   //see if display property is set to none
+           ele.style.display="block";       
+       }else{
+           ele.style.display="none";
+       }
+   }
+} 
+
+</script>
+
+<TITLE>Systems 2 - Computer Systems Terms List</TITLE>
+<a href="/~kingcha/index.html">Back To Home</a>
+</HEAD>
+<BODY>
+<div id="body" class="body">
+
+<button class="text" onclick="showorhide('Chapter 1')"><h1>Chapter 1</h1><h1 class="triangle"></h1></button>
+<div id="Chapter 1" class="hidden"><ul>
+	<li onclick="showorhide('CPU')" >CPU
+		<p id="CPU" class="hidden">
+		The Central Processing Unit is the main chip on the machine that controls all processes
+		</p>	<li>Device Controller	<li>Device Driver	<li>Registers	<li>RAM	<li>Secondary Storage	<li>Cache	<li>Kernel	<li>Storage Device Hierarchy(fig1.4)	<li>Storage Performance(fig1.11)	<li>System programs	<li>Application programs	<li>Bootstrap	<li>Interrupt	<li>Direct Memory Access(DMA)(fig1.5)	<li>Single-processor system	<li>Multiprocessor system	<li>Multiprogramming	<li>Multitasking (Time Sharing)	<li>Batch	<li>Throughput	<li>Response time	<li>Job Scheduling	<li>CPU Scheduling	<li>User mode vs kernel mode(fig1.10)	<li>Security vs Protection
+</ul></div>
+<button class="text" onclick="showorhide('Chapter 2')"><h1>Chapter 2</h1><h1 class="triangle"></h1></button>
+<div id="Chapter 2" class="hidden">
+<ul>	<li>GUI	<li>Command Interpreter	<li>System Calls	<li>Operating System Services(Fig2.1)	<li>OS Design
+		<ul>		<li>Layered Approach(fig2.13,2.14)		<li>Modules(fig2.15)		<li>Virtual
+		</ul>	<li>Machines(fig2.17b)</ul>
+</div>
+
+<button class="text" onclick="showorhide('Chapter 3')"><h1>Chapter 3</h1><h1 class="triangle"></h1></button><div id="Chapter 3" class="hidden">
+<ul>	<li>Process	<li>Process States(fig3.2)
+		<ul>		<li>New		<li>Running		<li>Waiting		<li>Ready		<li>Terminated
+		</ul>	<li>PCB (fig3.3)	<li>PCB Components	<li>Queues(fig3.6)	<li>Queuing Diagram(fig3.7)	<li>Job Queue	<li>Ready Queue	<li>Device Queue	<li>Short-term scheduler	<li>Long-term scheduler	<li>Medium-term scheduler(fig3.8)	<li>Swapping	<li>CPU bound process	<li>I/O bound process	<li>Degree of Multiprogramming	<li>Context Switch(fig3.4)	<li>Parent Process	<li>Child process	<li>Unix  – ps, kill, nice, fork, execvp, wait, background (bg), foreground (fg), pipe ( | )
+</ul></div>
+<button class="text" onclick="showorhide('Chapter 5')"><h1>Chapter 5</h1><h1 class="triangle"></h1></button>
+<div id="Chapter 5" class="hidden">
+<ul><li>Preemptive Scheduling<li>Non-preemptive Scheduling<li>Dispatcher<li>Dispatch Latency<li>CPU Utilization<li>Throughput<li>Turnaround Time<li>Waiting Time<li>Response Time<li>Arrival Time<li>Burst<li>Gantt Chart<li>FCFS<li>SJF<li>Priority<li>RR<li>Prediction of CPU Burst<li>Blocking<li>Starvation<li>Deadlock<li>Multilevel Queue Scheduling(fig5.6&5.7)</ul>
+</div>
+
+<button class="text" onclick="showorhide('Chapter 6')"><h1>Chapter 6</h1><h1 class="triangle"></h1></button>
+<div id="Chapter 6" class="hidden">
+<ul>	<li>Race Condition	<li>Critical Section(fig6.3)	<li>Entry Section	<li>Exit Section	<li>Solution satisfies
+		<ul>		<li>Mutual Exclusion		<li>Progress		<li>Bounded Waiting
+		</ul>	<li>Semaphores
+		<ul>		<li>Counting		<li>Binary (mutex)
+		</ul>	<li>Wait/Signal	<li>Busy Waiting	<li>Block	<li>Producer-Consumer Problem	<li>Readers-Writers Problem	<li>Dining Philosophers</ul>
+</div>
+
+<button class="text" onclick="showorhide('Chapter 7')"><h1>Chapter 7</h1><h1 class="triangle"></h1></button>
+<div id="Chapter 7" class="hidden">
+<ul>	<li>Request/Allocate/Release	<li>Necessary Conditions	<li>Resource Allocation Graph		<li>Request Edge		<li>Allocation Edge		<li>Claim Edge(fig 7.6&7.7)	<li>Cycle	<li>Single Instance of Resources	<li>Multiple Instances of Resources	<li>Hold and Wait	<li>Circular Wait	<li>Deadlock Prevention	<li>Deadlock Avoidance	<li>Deadlock Detection	<li>Safe State	<li>Unsafe State	<li>Wait-for Graph(fig 7.8)	<li>Banker’s Algorithm	<li>Cycle Detection Algorithm(if time allows)
+</ul>
+</div><button class="text" onclick="showorhide('Chapter 8')"><h1>Chapter 8</h1><h1 class="triangle"></h1></button>
+<div id="Chapter 8" class="hidden">
+<ul>	Logical vs Physical Address<li>Memory Management Unit<li>Swapping(fig 8.5)<li>Contiguous Memory Allocation<li>Partitions 	<li>Fixed Size 	<li>Variable Size – Holes<li>Allocation Algorithms	<li>First Fit	<li>Worst Fit	<li>Best Fit<li>Comparison of Allocation Alg.s<li>Fragmentation	<li>External	<li>Internal	<li>Compaction<li>Paging(fig 8.8)	<li>Pages	<li>Paging Table	<li>Frames<li>Segmentation (fig 8.20)	<li>Segments	<li>Segmentation Table
+</ul>
+</div>
+<button class="text" onclick="showorhide('Chapter 9')"><h1>Chapter 9</h1><h1 class="triangle"></h1></button><div id="Chapter 9" class="hidden">
+<ul><li>Virtual/physical Mem(fig. 9.1)<li>Demand Paging (fig 9.4)<li>Page Table (fig 9.5)<li>Page Faults & Handling (fig 9.6)<li>Swap Space<li>Page Replacement
+	<ul>	<li>Victim Frame	<li>Modify/Dirty Bit(fig 9.10)	<li>Page-Replacement Algorithms	<li>Reference String	<li>FIFO	<li>Optimal	<li>LRU	<li>Counting Based (LFU/MFU)	<li>Belady’s Anomaly	<li>Allocation of Frames	<li>Minimum # of Frames	<li>Equal Allocation	<li>Proportional Allocation (#Frames/Priority)	<li>Global  vs Local Allocation
+	</ul><li>Thrashing
+	<ul>	<li>Cause/Solutions	<li>CPU util vs degree of multiprogramming (Fig 9.18)
+	</ul>
+</ul>
+</div>
+<button class="text" onclick="showorhide('Chapter 10')"><h1>Chapter 10</h1><h1 class="triangle"></h1></button>
+<div id="Chapter 10" class="hidden">
+<ul><li>File (Abstract Data Type)<li>File Attributes (7 types)<li>File Operations (6)<li>Types & Extensions(fig 10.2)<li>Access Methods (Sequential/Direct)<li>Directory/Disk Mapping (fig 10.6) <li>Mounting(definition)<li>Operations performed on a directory (6)<li>Types of Directories
+	<ul>	<li>Single-level directory (fig 10.8)	<li>Two-level directory (fig 10.9)	<li>Tree-structured directories (fig 10.10)	<li>Acyclic (fig 10.11)	<li>General (fig 10.12)
+	</ul><li>Compare/Contrast Types<li>Protection<li>Types of Access(6), Control<li>Unix
+	<ul>	<li>Owner/Group/Universe	<li>chmod, chown, du, df, mount	<li>Directory listing (fig10.16)
+	</ul>
+</ul>
+</div>
+<button class="text" onclick="showorhide('Chapter 11')"><h1>Chapter 11</h1><h1 class="triangle"></h1></button>
+<div id="Chapter 11" class="hidden">
+<ul><li>File Systems (fig 11.1)<li>Device Drivers(definition)<li>Directory Implementation	<li>Linear List	<li>Hash Table<li>Allocation Methods	<li>Contiguous	<li>Linked	<li>Indexed<li>Free-Space Management	<li>Free Space List	<li>Bit Vector	<li>Linked List
+</ul>
+</div>
+<button class="text" onclick="showorhide('Chapter 12')"><h1>Chapter 12</h1><h1 class="triangle"></h1></button>
+<div id="Chapter 12" class="hidden">
+<ul><li>Primary/Secondary/Tertiary       (differences) <li>Magnetic Disks<li>Platter/Arm/etc (fig 12.1)<li>Cylinders/Tracks/Sectors/Gaps<li>Transfer Rate<li>Seek Time<li>Rotational Latency<li>I/O bus<li>Disk Controller<li>Magnetic Tapes<li>Density <li>Disk Scheduling
+	<ul>	<li>FCFS	<li>SSTF	<li>SCAN	<li>C-SCAN	<li>C-LOOK
+	</ul><li>Formatting<li>Error-Correcting Code<li>Partition<li>Booting<li>Bad Blocks
+	<ul>	<li>Sector Sparing	<li>Sector Slipping
+	</ul>
+</ul>
+</div>
+<button class="text" onclick="showorhide('Chapter 6_2')"><h1>Chapter 6 (Memory Heirarchy)</h1><h1 class="triangle"></h1></button>
+<div id="Chapter 6_2" class="hidden">
+<ul><li>Memory Hierarchy (definition)<li>Random-Access Memory
+	<ul>	<li>SRAM	<li>DRAM
+	</ul><li> Compare(fig. slide 7)<li>Memory Controller<li>Supercells (fig. slides 8-10)<li>Memory Module fig. slide 11)<li>Nonvolatile vs Volatile Memory<li>ROM,PROM, EPROM, EEPROM,       flash<li>Buses (fig. slide 15)<li>Memory Read/Write             <li>   Transaction(fig. slides 16-21)<li>I/O Bus (fig slide 47)<li>Reading Disk Sector (fig slide 48-50)
+<ul>	<li>Interrupt	<li>DMA
+</ul><li>Solid State Disks<li>Storage Technology Trends (fig slide    <li> 54)<li>CPU Trends (fig slide 55), Power Wall<li>CPU-Memory Gap (fig slide 56)<li>Locality<li>Principle of Locality	<ul>
+	<li>Temporal	<li>Spatial
+	</ul><li>Memory Hierarchy (fig slide 66)<li> (Also see Storage-Device Hierarchy (fig slide 19 of Ch 1, fig <li> 1.4 in text))<li>Cache, Caching<li>Cache Hit/Miss (fig slides 68-70)<li>Cache Placement Policy<li>Cache Replacement Policy<li>Cold Miss<li>Conflict Miss<li> Capacity Miss<li>Cache Memory (fig slide 74)<li>General Cache Organization (S, E, B) (fig slide 75)
+	<ul>		<li>Def. of Set, Line, Tag, Valid Bit		<li>address bits for set		<li>address bits for tag		<li>index (for multiple bytes/block)
+	</ul><li>Steps of a Cache Request
+	<ul>	<li>Set Selection	<li>Line Matching	<li>Word Extraction
+	</ul><li>Direct Mapped Cache (fig slide 79)<li>Direct Mapped Cache Simulation	(fig slide 82)
+	<ul>	<li>Mapping of address bits to cache	<li>Trace
+	</ul><li>E-way Set Associative Cache 	(meaning of different values of E)<li>2-way Set Associative Cache <li>(fig. slide 84-86)<li>2-way Set Associative Cache Simulation (fig. slide 87)
+	<ul>	<li>Mapping of address bits to cache	<li>Trace
+	</ul>
+</ul>
+</div>
+
+</div>
+</body>
+</html> 

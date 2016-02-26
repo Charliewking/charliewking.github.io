@@ -1,0 +1,345 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML lang="en-US">
+<HEAD>
+<META http-equiv="Content-Type" content=text/html; charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="CSS.css"></link>
+<script type="text/javascript">
+
+var playerSquares = [];
+var computerSquares = [];
+var winningCombos = [["1","2","3"],["4","5","6"],["7","8","9"],["1","4","7"],["2","5","8"],["3","6","9"],["1","5","9"],["3","5","7"]];
+
+/*
+When The player has two winning combos, the computer cannot decide which to defend.
+*/
+
+
+
+function playerChoice(squareToMarkID)
+{
+	if(document.getElementById(squareToMarkID)){
+		var squareToMark = document.getElementById(squareToMarkID);
+	}
+	if(squareToMark.value==""){   //see if display property is set to none
+                squareToMark.value="X";
+                squareToMark.className = "pressed";
+                squareToMark.style.display="X";
+		playerSquares.push(squareToMarkID);
+	}
+	else{
+		return true;
+	}
+	if (checkForWinner(playerSquares, true)){
+		displayWinner(true);
+		return true;	
+	}
+	squareToMark.style.display="X";
+	setTimeout(function() {computerChoice();},250);
+}
+
+function computerChoice()
+{
+	var squareToMarkID;
+	if (playerSquares.length == 1) {
+		if (document.getElementById(1).value=="") squareToMarkID = 1;
+		else if (document.getElementById(3).value=="") squareToMarkID = 3;
+		else if (document.getElementById(7).value=="") squareToMarkID = 7;
+		else if (document.getElementById(9).value=="") squareToMarkID = 9;
+		else if (document.getElementById(5).value==""){
+			squareToMarkID = 5;
+		}
+		else {
+			squareToMarkID = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
+		}		
+	}
+	else{
+		squareToMarkID = intelligentSquareSelection();	
+	} 
+	var squareToMark = document.getElementById(squareToMarkID);
+
+	if(squareToMark.value==""){
+		squareToMark.value="O";
+		squareToMark.className = "pressed";
+		squareToMark.style.display="O";
+		computerSquares.push(squareToMarkID);
+	}	
+	else if(squareToMark.value != ""){
+		return computerChoice();
+	}
+	if (checkForWinner(computerSquares, false)){
+		displayWinner(false);
+		return false;
+	}
+	return true;
+}
+
+function intelligentSquareSelection(){
+	var squareToSelect;
+	//First check to see if the computer has 2/3 of a combo and can win game,
+	//Then check to see if user has 2/3, and comp needs to defend.
+	//These are both done in playerOrComputerHasTwoOfThreeSquaresInCombo
+	for (var winComboNumber=0; winComboNumber<winningCombos.length; winComboNumber++){
+		squareToSelect = playerOrComputerHasTwoOfThreeSquaresInCombo(winningCombos[winComboNumber]);
+		if (squareToSelect!="0" && document.getElementById(squareToSelect).value==""){	
+				return squareToSelect;		
+		}
+	}
+	//If there are no 2/3 combos, prevent user from picking 3 corners
+//	if (document.getElementById(1).value=="") return 1;
+//	if (document.getElementById(3).value=="") return 3;
+//	if (document.getElementById(7).value=="") return 7;
+//	if (document.getElementById(9).value=="") return 9;
+	
+	for (var indexTwo = 1; indexTwo < 10; indexTwo++){
+		if (document.getElementById(indexTwo).value==""){
+			return indexTwo;				
+		}			
+	} 
+}
+
+//REFACTOR THIS FUNCTION!!!
+function playerOrComputerHasTwoOfThreeSquaresInCombo(winningCombo){
+	var indicesRemainingForComputer = ["2","1","0"];
+	var indicesRemainingForPlayer = ["2","1","0"];
+	for (var i=0; i<computerSquares.length; i++){
+		if (computerSquares[i]==winningCombo[0]){
+			indicesRemainingForComputer.pop();
+		}
+		else if (computerSquares[i]==winningCombo[1]){
+			if (indicesRemainingForComputer.length == 3){
+				indicesRemainingForComputer.pop();
+				indicesRemainingForComputer.pop();
+				indicesRemainingForComputer.push("0");
+			}
+			else if (indicesRemainingForComputer.length == 2){
+				if (indicesRemainingForComputer[0]=="1"){
+					indicesRemainingForComputer.pop();
+					indicesRemainingForComputer.pop();
+					indicesRemainingForComputer.push("0");
+				}
+				else {
+					indicesRemainingForComputer.pop();
+				}
+			}
+		}
+		else if (computerSquares[i]==winningCombo[2]){
+			if (indicesRemainingForComputer.length == 3){
+				indicesRemainingForComputer.pop();
+				indicesRemainingForComputer.pop();
+				indicesRemainingForComputer.pop();
+				indicesRemainingForComputer.push("1");
+				indicesRemainingForComputer.push("0");
+			}
+			else if (indicesRemainingForComputer.length == 2){
+				if (indicesRemainingForComputer[1]=="1"){
+					indicesRemainingForComputer.pop();
+					indicesRemainingForComputer.pop();
+					indicesRemainingForComputer.push("1");
+				}
+				else {
+					indicesRemainingForComputer.pop();
+					indicesRemainingForComputer.pop();
+					indicesRemainingForComputer.push("0");
+				}
+			}
+		} 		
+	}
+	if (indicesRemainingForComputer.length==1) return winningCombo[indicesRemainingForComputer[0]];
+
+	for (var i=0; i<playerSquares.length; i++){
+		if (playerSquares[i]==winningCombo[0]){
+			indicesRemainingForPlayer.pop();
+		}
+		else if (playerSquares[i]==winningCombo[1]){
+			if (indicesRemainingForPlayer.length == 3){
+				indicesRemainingForPlayer.pop();
+				indicesRemainingForPlayer.pop();
+				indicesRemainingForPlayer.push("0");
+			}
+			else if (indicesRemainingForPlayer.length == 2){
+				if (indicesRemainingForPlayer[0]=="1"){
+					indicesRemainingForPlayer.pop();
+					indicesRemainingForPlayer.pop();
+					indicesRemainingForPlayer.push("0");
+				}
+				else {
+					indicesRemainingForPlayer.pop();
+				}
+			}
+		}
+		else if (playerSquares[i]==winningCombo[2]){
+			if (indicesRemainingForPlayer.length == 3){
+				indicesRemainingForPlayer.pop();
+				indicesRemainingForPlayer.pop();
+				indicesRemainingForPlayer.pop();
+				indicesRemainingForPlayer.push("1");
+				indicesRemainingForPlayer.push("0");
+			}
+			else if (indicesRemainingForPlayer.length == 2){
+				if (indicesRemainingForPlayer[1]=="1"){
+					indicesRemainingForPlayer.pop();
+					indicesRemainingForPlayer.pop();
+					indicesRemainingForPlayer.push("1");
+				}
+				else {
+					indicesRemainingForPlayer.pop();
+					indicesRemainingForPlayer.pop();
+					indicesRemainingForPlayer.push("0");
+				}
+			}
+		}
+	}
+	console.log("indic..Player length = " + indicesRemainingForPlayer.length);
+	console.log("winningCom = " + winningCombo[0] + "," + winningCombo[1] + "," + winningCombo[2]);
+	console.log("indicesForPlayer[0] = " + indicesRemainingForPlayer[0]); //************************ 
+	if (indicesRemainingForPlayer.length==1) return winningCombo[indicesRemainingForPlayer[0]];
+	return 0;	
+}
+
+function checkForWinner(thisSideSquares, bool){
+	for (var i=0; i<winningCombos.length; i++){
+		if (squaresAreMarkedByThisSide(thisSideSquares, winningCombos[i])){	
+			markSquares(winningCombos[i], bool);
+			return true;
+		}
+	}
+	return false;
+}
+
+function markSquares(squares, bool){
+	for (var i=0, l=squares.length; i < l; i++){
+		var square = document.getElementById(squares[i]);
+		if(bool){
+			square.className = "win";
+		}
+		else if(bool == false){
+			square.className = "loss";
+		}
+	}
+}
+
+function squaresAreMarkedByThisSide(thisSideSquares,squaresToCheck)
+{
+	var hasFirst, hasSecond, hasThird;
+	for (var i=0; i < thisSideSquares.length; i++){
+		if (thisSideSquares[i]==squaresToCheck[0]){
+			hasFirst = true;
+		}	
+        if (thisSideSquares[i]==squaresToCheck[1]){
+            hasSecond = true;
+        }
+        if (thisSideSquares[i]==squaresToCheck[2]){
+            hasThird = true;
+        }
+	}
+	return (hasFirst && hasSecond && hasThird);
+}
+
+function displayWinner(bool){
+	//Clear the playing area for the current game (ragequit)
+	if (bool == true){
+		document.getElementById("winbox").value = "You Win!";
+		document.getElementById("winCol").value ++;
+		setTimeout(function() {refreshGame("game");},1250);
+	}
+	else if (bool == false){
+		document.getElementById("winbox").value = "You Lose.";
+		document.getElementById("lossCol").value ++;
+		setTimeout(function() {refreshGame("game");},1250);
+	}
+	else{
+		for(var i = 1; i<10; i++){
+			document.getElementById(i).className = "draw";
+		}
+		document.getElementById("winbox").value = "Draw";
+		setTimeout(function() {refreshGame("game");},1250);
+	}
+}
+
+function refreshGame(id){
+	playerSquares = [];
+	computerSquares = [];
+    	
+	for (var i=1; i<=9; i++){
+		document.getElementById(i).value = "";
+		document.getElementById(i).className = "square";
+	}
+	document.getElementById("winbox").value = "";
+}
+
+function resetScore(){
+	
+	document.getElementById("winCol").value = 0;
+	document.getElementById("lossCol").value = 0;
+		
+}
+
+</script>
+<TITLE>Tic Tac Toe!</TITLE>
+
+</HEAD>
+<BODY>
+
+<div id="body" class="centered">
+<h1>Tic Tac Toe!</h1>
+<hr width="100%">
+<table id="game">
+        <tr><!-- 0 -->
+                <td><!-- (0,0) -->
+                <input type="button" id="1" class="square" value="" onclick="playerChoice(id)"></input>
+                </td>
+                <td><!-- (0,1) -->
+                <input type="button" id="2" class="square" value="" onclick="playerChoice(id)"></input>
+                </td>
+                <td><!-- (0,2) -->
+                <input type="button" id="3" class="square" value="" onclick="playerChoice(id)"></input>
+                </td>
+        </tr>
+       <tr><!-- 1 -->
+                <td><!-- (1,0) -->
+                <input type="button" id="4" class="square" value="" onclick="playerChoice(id)"></input>
+                </td> 
+                <td><!-- (1,1) -->
+                <input type="button" id="5" class="square" value="" onclick="playerChoice(id)"></input>
+                </td>
+                <td><!-- (1,2) -->
+                <input type="button" id="6" class="square" value="" onclick="playerChoice(id)"></input>
+                </td>
+        </tr>
+        <tr><!-- 2 -->
+                <td><!-- (2,0) -->
+                <input type="button" id="7" class="square" value="" onclick="playerChoice(id)"></input>
+                </td>
+                <td><!-- (2,1) -->
+                <input type="button" id="8" class="square" value="" onclick="playerChoice(id)"></input>
+                </td>
+                <td><!-- (2,2) -->
+                <input type="button" id="9" class="square" value="" onclick="playerChoice(id)"></input>
+                </td>
+        </tr>
+
+
+</table>
+<br>
+        <input id="winbox" class="score" value=""></input></p>
+
+        <button id="resetSquares" class="reset" onclick="refreshGame(id)">Reset Game</button>
+<table>
+	<tr>
+        	<td style="text-align:left;"><p>Player Wins:</p></td>
+        	<td><input id="winCol" class="score" value="0" disabled="true"></input></td>
+	</tr>
+	<tr>
+        	<td style="text-align:left;"><p>Computer Wins:</p></td>
+        	<td><input id="lossCol" class="score" value="0" disabled="true"></input></td>
+	</tr>
+</table>
+
+        <button id="resetScore" class="reset" onclick="resetScore()">Reset Score</button>
+</div>
+
+</BODY>
+</HTML>
+

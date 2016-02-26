@@ -1,0 +1,115 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML lang="en-US">
+<HEAD>
+<META http-equiv="Content-Type" content=text/html; charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../css/CSS.css"></link>
+<script type="text/javascript" src="../js/Calc3.js"></script>
+<TITLE>Calculator</TITLE>
+
+</HEAD>
+<BODY>
+
+<div id="calc" class="centered calc">
+<h1>Calculator</h1>
+
+ <input id="display" class="display" value= "0" ></input></p> 
+
+<br>
+<table id="game">
+	<tr>
+		<td>
+		<input type="button" id="memCLR" class="square" value="MC" onclick="memclr()"></input>
+		</td>
+		<td>
+		<input type="button" id="memR" class="square" value="MR" onclick="memR()"></input>
+		</td>
+		<td>
+		<input type="button" id="memS" class="square" value="MS" onclick="memS()"></input>
+		</td>
+		<td>
+		<input type="button" id="mem+" class="square" value="M+" onclick="memPlus()"></input>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<input type="button" id="back" class="square" value="&larr;" onclick="backSpace()"></input>
+		</td>
+		<td>
+		<input type="button" id="clear all" class="square" value="AC" onclick="clearAll()"></input>
+		</td>
+		<td>
+		<input type="button" id="clear entry" class="square" value="CE" onclick="clearEntry()"></input>
+		</td>
+		<td>
+		<input type="button" id="negate" class="square" value="&plusmn;" onclick="negate()"></input>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<input type="button" id="7" class="square" value= "7" onclick="handleNumbers(id)"></input>
+		</td>
+		<td>
+		<input type="button" id="8" class="square" value= "8" onclick="handleNumbers(id)"></input>
+		</td>
+		<td>
+		<input type="button" id="9" class="square" value= "9" onclick="handleNumbers(id)"></input>
+		</td>
+		<td>
+		<input type="button" id="/" class="square" value="/" onclick="handleOperators(id)"></input>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<input type="button" id="4" class="square" value="4" onclick="handleNumbers(id)"></input>
+		</td>
+		<td>
+		<input type="button" id="5" class="square" value= "5" onclick="handleNumbers(id)"></input>
+		</td>
+		<td>
+		<input type="button" id="6" class="square" value= "6" onclick="handleNumbers(id)"></input>
+		</td>
+		<td>
+		<input type="button" id="*" class="square" value="*" onclick="handleOperators(id)"></input>
+		</td>
+		<td rowspan="3" class="equals">
+		<input type="button" id="=" class="square" value="=" onclick="equals()" 
+			style="height:156px;"></input>
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<input type="button" id="1" class="square" value= "1" onclick="handleNumbers(id)"></input>
+		</td>
+		<td>
+		<input type="button" id="2" class="square" value= "2" onclick="handleNumbers(id)"></input>
+		</td>
+		<td>
+		<input type="button" id="3" class="square" value= "3" onclick="handleNumbers(id)"></input>
+		</td>
+		<td>
+		<input type="button" id="-" class="square" value="-" onclick="handleOperators(id)"></input>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<input type="button" id="0" class="square" value= "0" 
+			style="width:104px;" onclick="handleNumbers(id)"></input>
+		</td>
+		<td>
+		<input type="button" id="." class="square" value="." onclick="handleDecimal(id)"></input>
+		</td>
+		<td>
+		<input type="button" id="+" class="square" value="+" onclick="handleOperators(id)"></input>
+		</td>
+	</tr>
+
+
+</table>
+<br>
+</div>
+
+</BODY>
+</HTML>

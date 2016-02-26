@@ -1,0 +1,30 @@
+
+
+body			{background-color:#6D8Ef8;font-family:helvetica;}
+
+p			{color:#ffffff;}
+
+a			{color:#ffffff;text-shadow: 1px 1px 1px #000; }
+
+ul			{list-style-image:url('cloud.png');}
+
+div.MainPage		{width:100%;float:left;}
+div.header		{height:auto;width:100%;float:left;}
+div.headLeft		{width:50%;float:left;}
+div.headRight		{width:50%;float:left;}
+
+div.LeftCol		{width:35%;padding:10px;float:left;}
+div.LeftSpace		{width:20px;float:left;}
+div.RightCol		{width:60%;float:left;}
+
+img.pillImage		{width:75%;max-width:500px;max-height:auto;}
+img.bottomblocks	{width:100%;max-height:150px;}
+img.medIcon		{width:75px;height:auto;margin-bottom:-20px;}
+img.mblock		{width:50px;height:auto;margin-bottom:-13px;}
+img.plant		{height:40px;width:auto;margin-bottom:-15px;}
+img.project		{max-height:500px;}
+
+h3			{font-size:200%;color:#dcac59; text-shadow: 1px 1px 1px #000; }
+h4, h4#a		{color:#ffffff;text-shadow: 1px 1px 1px #000;}
+
+hr			{width:75%;}

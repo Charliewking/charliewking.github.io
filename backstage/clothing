@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>Clothing List</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/CSS.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="../css/carousel.css" rel="stylesheet">
+    
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="../index.html">Home</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- Top Area
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="jumbotron" style="margin-top:50px;padding:25px;">
+      <div class="container">
+        <h1>Clothing List</h1>
+        <p>Everything you own should be documented here
+        	</p>
+      </div>
+    </div>
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+	<!-- Shirts -->
+    
+    <div class="container marketing"> 
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+    
+    <h2 id="shirts">SHIRTS</h2>
+        <!-- blue shirt -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/blueoxford.jpg" style="height:140px;" alt="Brooklyn Pizza">
+          <h3>Blue Cotton Oxford</h3>
+          <p>J.Crew
+          	</p>
+        </div><!-- /.col-lg-4 -->
+       
+        <!-- dark gray shirt -->       
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/darkgrayoxford.jpg" style="height:140px;" alt="Horse Farm">
+          <h3>Dark Gray Cotton Oxford</h3>
+          <p>Macy's
+          	</p>
+        </div><!-- /.col-lg-4 -->
+        
+        <!-- light gray shirt -->        
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/grayoxford.jpg" style="height:140px;" alt="Generic placeholder image">
+          <h3>Light Gray Cotton Oxford</h3>
+          <p> J. Crew
+          	</p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+      
+      <div class="row">
+
+        <!-- blue and white striped shirt -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/bluewhitestripes.jpg" style="height:140px;" alt="Brooklyn Pizza">
+          <h3>Blue and White Striped Shirt</h3>
+          <p>Macy's
+          	</p>
+        </div><!-- /.col-lg-4 -->
+       
+        <!-- gray striped shirt -->       
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/greystripes.jpg" style="height:140px;" alt="Horse Farm">
+          <h3>Gray Striped Shirt</h3>
+          <p>Macy's
+          	</p>
+        </div><!-- /.col-lg-4 -->
+        
+        <!-- Gray and white flannel -->        
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/grayflannel.jpg" style="height:140px;" alt="Generic placeholder image">
+          <h3>Gray and White flannel</h3>
+          <p> Macy's
+          	</p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+      
+      <!--   Pants  -->
+      
+    <div class="row">
+    
+    <h2 id="pants">PANTS</h2>
+        <!-- Jeans -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/jeans.jpg" style="height:140px;" alt="Brooklyn Pizza">
+          <h3>Blue Jeans</h3>
+          <p>Eddie Bauer
+          	</p>
+        </div><!-- /.col-lg-4 -->
+       
+        <!-- Cords-->       
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/cords.jpg" style="height:140px;" alt="Horse Farm">
+          <h3>Green Cords</h3>
+          <p>Eddie Bauer
+          	</p>
+        </div><!-- /.col-lg-4 -->
+        
+        <!-- Chinos -->        
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/chinos.jpg" style="height:140px;" alt="Generic placeholder image">
+          <h3>Khaki Chinos</h3>
+          <p> Tommy Hilfiger
+          	</p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+      
+      
+            <!--   Coats  -->
+      
+    <div class="row">
+    
+    <h2 id="jackets">JACKETS</h2>
+        <!-- Jeans -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/redraincoat.jpg" style="height:140px;" alt="Brooklyn Pizza">
+          <h3>Red Raincoat</h3>
+          <p>Eddie Bauer
+          	</p>
+        </div><!-- /.col-lg-4 -->
+       
+        <!-- Cords-->       
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/blackraincoat.jpg" style="height:140px;" alt="Horse Farm">
+          <h3>Black Raincoat</h3>
+          <p>Eddie Bauer
+          	</p>
+        </div><!-- /.col-lg-4 -->
+        
+        <!-- Chinos -->        
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/brownleatherjacket.jpg" style="height:140px;" alt="Generic placeholder image">
+          <h3>Brown Leather Jacket</h3>
+          <p> Eddie Bauer
+          	</p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+            <!--   Shoes -->
+      
+    <div class="row">
+    
+    <h2 id="shoes">SHOES</h2>
+        <!-- sneakers -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/brownsuede.jpg" style="height:140px;" alt="Brooklyn Pizza">
+          <h3>Brown Suede</h3>
+          <p>Eddie Bauer
+          	</p>
+        </div><!-- /.col-lg-4 -->
+       
+        <!-- boots -->       
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/boots.jpg" style="height:140px;" alt="Horse Farm">
+          <h3>Brown Boots</h3>
+          <p>Timberland
+          	</p>
+        </div><!-- /.col-lg-4 -->
+        
+        <!-- black oxfords -->        
+        <div class="col-lg-4">
+          <img class="img-circle" src="../images/clothing/blackshoes.jpg" style="height:140px;" alt="Generic placeholder image">
+          <h3>Black Oxford Shoes</h3>
+          <p> Macy's
+          	</p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/docs.min.js"></script>
+    <script src="../js/myscript.js"></script>
+    
+    <script type="text/javascript">// <![CDATA[
+jQuery(document).ready(function(){
+...	
+	jQuery("#myCarousel").touchwipe({
+          wipeLeft: function() { jQuery("#myCarousel").carousel('next'); },
+          wipeRight: function() { jQuery("#myCarousel").carousel('prev'); },
+          min_move_x: 20,
+          preventDefaultEvents: true
+	});
+});
+// ]]></script>
+
+  </body>
+</html>
