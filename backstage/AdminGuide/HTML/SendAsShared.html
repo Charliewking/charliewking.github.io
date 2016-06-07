@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SendAsShared</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>Send As a Shared Mailbox</h1>
+<h5>Written by Charlie King - Microsoft Consulting - March 2016</h5>
+<hr />
+<h3>Description:</h3>
+<p>User has access to 'Send As' a shared mailbox, but gets an undeliverable message in response from the server when they attempt to send a message. </p>
+<blockquote>
+<p><img src="../images/SendAsShared/SendAsUndeliverable.png" alt="Undeliverable message when trying to send as a Shared Mailbox (SendAsUndeliverable.png)" title="Undeliverable message when trying to send as a Shared Mailbox (SendAsUndeliverable.png)" /></p>
+</blockquote>
+<h3>Solution:</h3>
+<p>Follow the steps below to ensure proper sending as a Shared Mailbox</p>
+<h5>1. Make sure the Shared Mailbox exists in the Admin Center</h5>
+<blockquote>
+<p><img src="../images/SendAsShared/ExchangeAdmin1.png" alt="Make sure the Mailbox exists in the Admin Center (ExchangeAdmin1.png)" title="Make sure the Mailbox exists in the Admin Center (ExchangeAdmin1.png)" />
+<br></p>
+</blockquote>
+<p><strong>NOTE:</strong> If you don't find it under 'Shared' Make sure you check under 'Resources' and 'Users' and 'Groups' to make sure the user isn't mistaken about it being a Shared Mailbox. If it still isn't there, inform the user the mailbox doesn't exist and either ask for more information about the mailbox, or inform them they can submit a request to have one provisioned.</p>
+<h5>2. Make sure the User is listed under Send As</h5>
+<blockquote>
+<p><img src="../images/SendAsShared/ExchangeAdmin2.png" alt="Make sure the is listed under &quot;Send As&quot; in the Admin Center (ExchangeAdmin2.png)" title="Make sure the is listed under &quot;Send As&quot; in the Admin Center (ExchangeAdmin2.png)" />
+<br></p>
+</blockquote>
+<p><strong>NOTE:</strong> If the user is not listed, Add them and instruct them to wait at least an hour before trying again, as it takes time for permission to sync through the environment. You should also inform the user that this will work from OWA if you log in to the Shared mailbox directly (If they are also listed as having Full Access - See the 'Full Access' listing to confirm). </p>
+<h5>3. Walk the User through sending as a shared mailbox, starting with the New Email window</h5>
+<h6>3a.  If you do not see a &quot;From&quot; box, select the &quot;From&quot; in the &quot;Options&quot; tab</h6>
+<blockquote>
+<p><img src="../images/SendAsShared/Outlook1.png" alt="Select the 'From' box under 'Options' (Outlook1.png)" title="Select the 'From' box under 'Options' (Outlook1.png)" />
+<br></p>
+</blockquote>
+<h6>3b. Now you should see the 'From' option. Select 'From' and remove any existing entries.</h6>
+<blockquote>
+<p><img src="../images/SendAsShared/Outlook2.png" alt="Remove any existing Entries (Outlook2.png)" title="Remove any existing Entries (Outlook2.png)" />
+<br></p>
+</blockquote>
+<h6>3c.  Now that there are no entries. Select &quot;Other E-mail Address…&quot; and &quot;From&quot;</h6>
+<blockquote>
+<p><img src="../images/SendAsShared/Outlook3.png" alt="Select &quot;Other E-mail Address...&quot; (Outlook3.png)" title="Select &quot;Other E-mail Address...&quot; (Outlook3.png)" />
+<br>
+<img src="../images/SendAsShared/Outlook4.png" alt="Use 'From' to search for the Shared Mailbox Address (Outlook4.png)" title="Use 'From' to search for the Shared Mailbox Address (Outlook4.png)" />
+<br></p>
+</blockquote>
+<p><strong>NOTE:</strong> <em>You can type in part of the address in the box above, and hit <strong>ctrl+k</strong> to search the directory, as an alternative to searching for it manually. <strong>YOU CANNOT JUST TYPE IN THE ADDRESS WITHOUT DOING A SEARCH.</strong></em></p>
+<h6>3d.  You should see the email address listed in the box as the DisplayName (not the email address). Then click 'OK'</h6>
+<blockquote>
+<p><img src="../images/SendAsShared/Outlook5.png" alt="Make sure the DisplayName is listed correctly (Outlook5.png)" title="Make sure the DisplayName is listed correctly (Outlook5.png)" />
+<br></p>
+</blockquote>
+<p><strong>NOTE:</strong> Keep in mind that the account that is being used to Send As the shared mailbox MUST be a licenses user account. This will not be a concern as long as the user is logged into Outlook under their own account (or as a colleague if that applies)</p>
+<h5>4.  The &quot;From&quot; address should now be listed as the address of the Shared Mailbox (i.e. gs-sharedmailbox@bjc.org)</h5>
+<blockquote>
+<p><img src="../images/SendAsShared/Outlook6.png" alt="The Shared Mailbox Address should now appear in &quot;From&quot; (Outlook6.png)" title="Shared Mailbox Address should now appear in &quot;From&quot; (Outlook6.png)" />
+<br></p>
+</blockquote>
+<h5>5.  Send the message as normal</h5>
+<h3>Cause:</h3>
+<p>Most email addresses Users are used to in GroupWise are no longer the PrimarySMTPAddress for the accounts in Outlook, so if they type in the address and try to send as that address, it's not going to work. That's why they need to search for the account and send as it that way.</p>
+<p>Additionally, the credentials stuck in the &quot;From&quot; listing may be incorrect, and can lead to confusion. </p>
+<h3>Tags:</h3>
+<p>Send As, Undeliverable, Can't Send As Shared Mailbox, Shared Mailbox Rights, Send As Rights</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
