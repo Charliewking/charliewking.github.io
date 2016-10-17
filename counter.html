@@ -1,0 +1,66 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+
+<HTML lang="en-US">
+<HEAD>
+<META http-equiv="Content-Type" content=text/html; charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../css/CSS.css"></link>
+<TITLE>Poop Counter</TITLE>
+
+</HEAD>
+<BODY>
+
+<div id="calc" class="centered calc">
+<h1>Poop Counter 💩</h1>
+<h2>
+
+
+<script type="text/javascript">
+			
+var mydate = new Date();
+var year = mydate.getYear();
+if (year < 1000) {
+    year += 1900
+}
+var day = mydate.getDay();
+var month = mydate.getMonth();
+var daym = mydate.getDate();
+if (daym < 10) {
+    daym = "0" + daym;
+}
+ 
+var dayarray = new Array("Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday");
+ 
+var montharray = new Array("January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December");
+ 
+document.write("" + dayarray[day] + ", " + montharray[month] + " " + daym + "");
+</script>
+
+</h2>
+
+	<h1 align="center">
+		1
+	</h1>
+
+</div>
+
+</BODY>
+</HTML>
